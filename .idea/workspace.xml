@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9ecf37c-5fce-42fe-b347-f86987c2e518" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/netty-client/src/main/java/com/linhua/testdemo/client/handler/NettyClientInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-client/src/main/java/com/linhua/testdemo/client/NettyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-client/src/main/java/com/linhua/testdemo/client/NettyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-client/src/main/java/com/linhua/testdemo/client/handler/NettyClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-client/src/main/java/com/linhua/testdemo/client/handler/NettyClientHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/netty-server/src/main/java/com/linhua/testdemo/server/SpringNettyServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/netty-server/src/main/java/com/linhua/testdemo/server/SpringNettyServerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +49,20 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.NettyClient">
+    <configuration name="NettyClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.linhua.testdemo.client.NettyClient" />
+      <module name="netty-client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.linhua.testdemo.client.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="netty-demo" />
       <extension name="coverage">
@@ -60,8 +76,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpringNettyServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="netty-server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.linhua.testdemo.server.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.linhua.testdemo.server.SpringNettyServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NettyClient" />
+        <item itemvalue="Spring Boot.SpringNettyServerApplication" />
         <item itemvalue="Spring Boot.DemoApplication" />
       </list>
     </recent_temporary>
@@ -77,7 +108,7 @@
       <option name="presentableId" value="Default" />
       <updated>1598239653722</updated>
       <workItem from="1598239655372" duration="5509000" />
-      <workItem from="1598440847968" duration="1521000" />
+      <workItem from="1598440847968" duration="4263000" />
     </task>
     <servers />
   </component>
@@ -89,79 +120,107 @@
       <screen x="1440" y="23" width="1920" height="1057" />
     </state>
     <state x="2082" y="412" key="#com.intellij.fileTypes.FileTypeChooser/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598253142844" />
-    <state x="893" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1598441962442">
+    <state x="893" y="240" key="#com.intellij.ide.util.MemberChooser" timestamp="1598444108009">
       <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state x="2189" y="319" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254305671" />
     <state x="2189" y="319" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.816@1440.23.1920.1057" timestamp="1598252575145" />
-    <state x="893" y="240" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598441962442" />
-    <state width="1398" height="169" key="GridCell.Tab.0.bottom" timestamp="1598254428375">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state x="893" y="240" key="#com.intellij.ide.util.MemberChooser/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598444108009" />
+    <state width="1398" height="410" key="GridCell.Tab.0.bottom" timestamp="1598445239758">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.0.bottom/0.23.1440.816@0.23.1440.816" timestamp="1598240612452" />
     <state width="1398" height="169" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428375" />
-    <state width="1398" height="169" key="GridCell.Tab.0.center" timestamp="1598254428374">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.0.bottom/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239758" />
+    <state width="1398" height="410" key="GridCell.Tab.0.center" timestamp="1598445239758">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.0.center/0.23.1440.816@0.23.1440.816" timestamp="1598240612451" />
     <state width="1398" height="169" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428374" />
-    <state width="1398" height="169" key="GridCell.Tab.0.left" timestamp="1598254428374">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.0.center/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239758" />
+    <state width="1398" height="410" key="GridCell.Tab.0.left" timestamp="1598445239757">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.0.left/0.23.1440.816@0.23.1440.816" timestamp="1598240612451" />
     <state width="1398" height="169" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428374" />
-    <state width="1398" height="169" key="GridCell.Tab.0.right" timestamp="1598254428375">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.0.left/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239757" />
+    <state width="1398" height="410" key="GridCell.Tab.0.right" timestamp="1598445239758">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.0.right/0.23.1440.816@0.23.1440.816" timestamp="1598240612452" />
     <state width="1398" height="169" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428375" />
-    <state width="1398" height="169" key="GridCell.Tab.1.bottom" timestamp="1598254428377">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.0.right/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239758" />
+    <state width="1398" height="410" key="GridCell.Tab.1.bottom" timestamp="1598445239760">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.1.bottom/0.23.1440.816@0.23.1440.816" timestamp="1598240612454" />
     <state width="1398" height="169" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428377" />
-    <state width="1398" height="169" key="GridCell.Tab.1.center" timestamp="1598254428376">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.1.bottom/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239760" />
+    <state width="1398" height="410" key="GridCell.Tab.1.center" timestamp="1598445239759">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.1.center/0.23.1440.816@0.23.1440.816" timestamp="1598240612453" />
     <state width="1398" height="169" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428376" />
-    <state width="1398" height="169" key="GridCell.Tab.1.left" timestamp="1598254428376">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.1.center/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239759" />
+    <state width="1398" height="410" key="GridCell.Tab.1.left" timestamp="1598445239759">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.1.left/0.23.1440.816@0.23.1440.816" timestamp="1598240612453" />
     <state width="1398" height="169" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428376" />
-    <state width="1398" height="169" key="GridCell.Tab.1.right" timestamp="1598254428377">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.1.left/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239759" />
+    <state width="1398" height="410" key="GridCell.Tab.1.right" timestamp="1598445239759">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.1.right/0.23.1440.816@0.23.1440.816" timestamp="1598240612454" />
     <state width="1398" height="169" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428377" />
-    <state width="1398" height="169" key="GridCell.Tab.2.bottom" timestamp="1598254428380">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.1.right/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445239759" />
+    <state width="1398" height="410" key="GridCell.Tab.2.bottom" timestamp="1598445198831">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.2.bottom/0.23.1440.816@0.23.1440.816" timestamp="1598240612455" />
     <state width="1398" height="169" key="GridCell.Tab.2.bottom/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428380" />
-    <state width="1398" height="169" key="GridCell.Tab.2.center" timestamp="1598254428379">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.2.bottom/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445198831" />
+    <state width="1398" height="410" key="GridCell.Tab.2.center" timestamp="1598445198830">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.2.center/0.23.1440.816@0.23.1440.816" timestamp="1598240612455" />
     <state width="1398" height="169" key="GridCell.Tab.2.center/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428379" />
-    <state width="1398" height="169" key="GridCell.Tab.2.left" timestamp="1598254428378">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.2.center/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445198830" />
+    <state width="1398" height="410" key="GridCell.Tab.2.left" timestamp="1598445198830">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.2.left/0.23.1440.816@0.23.1440.816" timestamp="1598240612454" />
     <state width="1398" height="169" key="GridCell.Tab.2.left/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428378" />
-    <state width="1398" height="169" key="GridCell.Tab.2.right" timestamp="1598254428379">
-      <screen x="1440" y="23" width="1920" height="1057" />
+    <state width="1398" height="410" key="GridCell.Tab.2.left/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445198830" />
+    <state width="1398" height="410" key="GridCell.Tab.2.right" timestamp="1598445198831">
+      <screen x="0" y="23" width="1440" height="821" />
     </state>
     <state width="1398" height="169" key="GridCell.Tab.2.right/0.23.1440.816@0.23.1440.816" timestamp="1598240612455" />
     <state width="1398" height="169" key="GridCell.Tab.2.right/1440.23.1920.1057/0.23.1440.814@1440.23.1920.1057" timestamp="1598254428379" />
+    <state width="1398" height="410" key="GridCell.Tab.2.right/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598445198831" />
     <state x="208" y="23" width="1024" height="816" key="SettingsEditor" timestamp="1598240297712">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="208" y="23" width="1024" height="816" key="SettingsEditor/0.23.1440.816@0.23.1440.816" timestamp="1598240297712" />
+    <state x="386" y="190" width="667" height="486" key="find.popup" timestamp="1598444538981">
+      <screen x="0" y="23" width="1440" height="821" />
+    </state>
+    <state x="386" y="190" width="667" height="486" key="find.popup/1440.23.1920.1057/0.23.1440.821@0.23.1440.821" timestamp="1598444538981" />
     <state x="114" y="128" key="new project wizard" timestamp="1598240748267">
       <screen x="0" y="23" width="1440" height="816" />
     </state>
     <state x="114" y="128" key="new project wizard/0.23.1440.816@0.23.1440.816" timestamp="1598240748267" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/netty-server/src/main/java/com/linhua/testdemo/server/SpringNettyServerApplication.java</url>
+          <line>20</line>
+          <properties field="server" class="com.linhua.testdemo.server.SpringNettyServerApplication" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

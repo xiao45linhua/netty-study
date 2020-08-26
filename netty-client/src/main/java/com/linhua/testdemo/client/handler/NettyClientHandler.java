@@ -3,6 +3,7 @@ package com.linhua.testdemo.client.handler;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
+import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.channel.SimpleChannelInboundHandler;
 import io.netty.util.CharsetUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
  * @date 2020/8/26$ 7:37 下午$
  */
 @Slf4j
-public class NettyClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
+public class NettyClientHandler extends ChannelInboundHandlerAdapter {
 
     //在到服务器的连接已经建立之后将被调用
     @Override
@@ -24,12 +25,13 @@ public class NettyClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
 
     @Override
     public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
-        super.exceptionCaught(ctx, cause);
+       log.info("error");
+       ctx.close();
     }
 
     @Override
-    protected void channelRead0(ChannelHandlerContext channelHandlerContext, ByteBuf byteBuf) throws Exception {
-
-        log.info("client received:" + byteBuf.toString(CharsetUtil.UTF_8));
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        System.out.println("--------");
+        System.out.println("ClientHandler read Message:"+msg.toString());
     }
 }

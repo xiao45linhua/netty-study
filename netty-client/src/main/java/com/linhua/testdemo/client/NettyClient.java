@@ -1,6 +1,7 @@
 package com.linhua.testdemo.client;
 
 import com.linhua.testdemo.client.handler.NettyClientHandler;
+import com.linhua.testdemo.client.handler.NettyClientInitializer;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelInitializer;
@@ -45,19 +46,18 @@ public class NettyClient {
             Bootstrap b = new Bootstrap();
             b.group(group)
                     .channel(NioSocketChannel.class)
-                    .remoteAddress(new InetSocketAddress(host,port))
-                    .handler(new ChannelInitializer<SocketChannel>() {
-                        @Override
-                        protected void initChannel(SocketChannel socketChannel) throws Exception {
-                            socketChannel.pipeline().addLast(new NettyClientHandler());
-                        }
-                    });
+                    .handler(new NettyClientInitializer());
+            log.info("绑定端口成功");
             //绑定端口
-            ChannelFuture f = b.connect().sync();
-
+            ChannelFuture f = b.connect(host,port).sync();
+            f.channel().writeAndFlush("netty");
             f.channel().closeFuture().sync();
+            log.info("绑定端口成功2");
         } catch (Exception e) {
             group.shutdownGracefully().sync();
+            log.info("绑定端口失败");
+        }finally {
+            group.shutdownGracefully();
         }
     }
 

@@ -26,7 +26,7 @@ public class SpringNettyServerApplication  implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        ChannelFuture future = server.start("127.0.0.1",8089);
+        ChannelFuture future = server.start("127.0.0.1",10010);
         Runtime.getRuntime().addShutdownHook(new Thread(){
             @Override
             public void run() {
